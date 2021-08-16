@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\PhotoDescriptionController;
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Auth\LoginController;
 
 
 /*
@@ -20,7 +22,9 @@ use App\Http\Controllers\Admin\OrderController;
 */
 
 
-Auth::routes();
+Auth::routes(['register' => false]);
+
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -38,6 +42,9 @@ Route::get('/photodescription/edit', [PhotoDescriptionController::class, 'edit']
 Route::put('/photodescription/update', [PhotoDescriptionController::class, 'update'])->name('photodescription.update');
 Route::get('/contact/edit', [ContactController::class, 'edit'])->name('contact.edit');
 Route::put('/contact/update', [ContactController::class, 'update'])->name('contact.update');
+
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
+Route::delete('/users/{user}',[UserController::class, 'destroy'])->name('user.destroy');
 
 
 

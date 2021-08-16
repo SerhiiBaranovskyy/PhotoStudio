@@ -1,0 +1,8 @@
+cmd> php artisan tinker
+$admin=new App\Models\User
+$admin->name = 'user_name'
+$admin->password = Hash::make('password')
+$admin->email = 'e-mail'
+$admin->save()
+$admin->assignRole('admin')
+

@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Support\Facades\Hash;
+
 
 class User extends Authenticatable
 {
@@ -17,6 +19,17 @@ class User extends Authenticatable
      *
      * @var array
      */
+/*    public function __construct(string $name, string $email, string $password)
+    {
+        $this->name = $name;
+        $this->email = $email;
+        $this->password = Hash::make($password);
+    }
+*/
+
+
+
+
     protected $fillable = [
         'name',
         'email',

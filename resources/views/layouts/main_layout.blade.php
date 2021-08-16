@@ -9,20 +9,19 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="/admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/admin/dist/css/adminlte.min.css">
+    
 </head>
 <body>
     <div id="app">
         
-        <main class="py-4">
+        <main class="py-5">
             @yield('content')
         </main>
     </div>

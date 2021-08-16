@@ -46,15 +46,23 @@
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="/admin/dist/img/set/userPhoto.png" class="img-circle elevation-2" alt="User Image">
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex justify-content-between">
+        <div class="d-flex">
+          <div class="image">
+            <img src="/admin/dist/img/set/userPhoto.png" class="img-circle elevation-2" alt="User Image">
+          </div>
+          <div class="info">
+            <a href="#" class="d-block">{{Auth::user()->name}}</a>
+          </div>
         </div>
-        <div class="info">
-          <a href="#" class="d-block">{{Auth::user()->name}}</a>
+        <div class="image" >
+          <a class="logout-link" href="{{route('logout')}}">
+            <i  class="fas fa-sign-out-alt" style="font-size: 1.5rem; line-height: 1.5"></i>
+          </a>
         </div>
+              
       </div>
-
+        
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -107,6 +115,14 @@
               <i class="nav-icon far fa-address-card"></i>
               <p>
                 Контакти
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('users.index')}}" class="nav-link">
+              <i class="nav-icon far fa-address-card"></i>
+              <p>
+                Адміністратори
               </p>
             </a>
           </li>
