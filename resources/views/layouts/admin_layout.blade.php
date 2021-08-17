@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Адмін-панель - @yield('title')</title>
 
+  <link rel="shortcut icon" href="/admin/dist/img/set/logo_title.png" type="image/x-icon">
+
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -38,7 +40,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="/" class="brand-link">
       <img src="/admin/dist/img/set/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Olga's PhotoStudio</span>
     </a>
@@ -96,14 +98,6 @@
           </li>
           <li class="nav-item">
             <a href="{{route('category.index')}}" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
-              <p>
-                Категорії фотографій
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="./index.html" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
                 Фотографії
@@ -120,7 +114,7 @@
           </li>
           <li class="nav-item">
             <a href="{{route('users.index')}}" class="nav-link">
-              <i class="nav-icon far fa-address-card"></i>
+              <i class="nav-icon far fa-user-circle"></i>
               <p>
                 Адміністратори
               </p>
@@ -151,7 +145,6 @@
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -166,7 +159,6 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -176,12 +168,11 @@
               <div class="inner">
                 <h3>{{DB::table('users')->count()}}</h3>
 
-                <p>Зареєстрованих адмінів</p>
+                <p>Адміністратори</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -196,7 +187,6 @@
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->

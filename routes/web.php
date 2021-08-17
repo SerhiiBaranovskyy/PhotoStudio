@@ -35,7 +35,6 @@ Route::middleware(['role:admin'])->prefix('admin_panel')->group(function(){
 Route::delete('/{order}',[OrderController::class, 'destroy'])->name('order.destroy');
 
 
-Route::resource('category', CategoryController::class);
 Route::get('/about/edit', [AboutController::class, 'edit'])->name('about.edit');
 Route::put('/about/update', [AboutController::class, 'update'])->name('about.update');
 Route::get('/photodescription/edit', [PhotoDescriptionController::class, 'edit'])->name('photodescription.edit');
@@ -45,6 +44,15 @@ Route::put('/contact/update', [ContactController::class, 'update'])->name('conta
 
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
 Route::delete('/users/{user}',[UserController::class, 'destroy'])->name('user.destroy');
+
+Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
+Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
+Route::put('/category/store', [CategoryController::class, 'store'])->name('category.store');
+Route::get('/category/{category}/edit', [CategoryController::class, 'edit'])->name('category.edit');
+Route::put('/category/{category}/update', [CategoryController::class, 'update'])->name('category.update');
+Route::delete('/category/{category}/delete', [CategoryController::class, 'destroy'])->name('category.destroy');
+
+
 
 
 
