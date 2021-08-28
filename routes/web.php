@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Admin\PhotoController;
 
 
 /*
@@ -52,6 +53,9 @@ Route::get('/category/{category}/edit', [CategoryController::class, 'edit'])->na
 Route::put('/category/{category}/update', [CategoryController::class, 'update'])->name('category.update');
 Route::delete('/category/{category}/delete', [CategoryController::class, 'destroy'])->name('category.destroy');
 
+Route::get('/photos/{category}', [PhotoController::class, 'index'])->name('photo.index');
+Route::put('/photos/{category}/update', [PhotoController::class, 'update'])->name('photo.update');
+Route::delete('/photos/{category}/delete', [PhotoController::class, 'destroy'])->name('photo.destroy');
 
 
 

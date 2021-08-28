@@ -10,8 +10,8 @@ class Category extends Model
     use HasFactory;
     protected $fillable = ['name'];
 
-    public function photo()
+    public function photos()
     {
-        return $this->morphMany(Photo::class, 'category_id');
+        return $this->hasMany(Photo::class);
     }
 }

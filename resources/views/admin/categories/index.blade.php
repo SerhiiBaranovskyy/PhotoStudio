@@ -37,10 +37,10 @@
                       <td>{{$count}}</td>
                       <?php $count++; ?>
                       <td>{{$category->name}}</td>
-                      <td>0</td>
+                      <td>{{$category->count}}</td>
                       <td>
                         <a href="{{ route('category.edit', $category)}}" class="btn btn-primary btn-sm">Редагувати</a>
-                        <a href="" class="btn btn-primary btn-sm">Додати фотографії</a>
+                        <a href="{{ route('photo.index', $category)}}" class="btn btn-primary btn-sm">Фотографії</a>
                         <form action="{{ route('category.destroy', $category)}}" method="post" style="display: inline-block">
                           @csrf
                           @method('DELETE')
