@@ -39,8 +39,16 @@ class PhotoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Category $category)
     {
+        $storeData = $request->validate([
+            'path_photo' => 'required|max:100',            
+        ]);
+        $storeData['category_id'] = $category->id;
+        print_r($storeData);
+        $photo = Photo::create($storeData);
+
+        return redirect()->action([PhotoController::class, 'index'],['category' => $category]);
         //
     }
 
@@ -76,6 +84,8 @@ class PhotoController extends Controller
     public function update(Request $request, Category $category, Photo $photo)
     {
         $photo->update($request);
+                print_r($request);
+
         return redirect('/photo/{category}')->with('completed', 'Photo has been updated');
 
     }
@@ -90,6 +100,6 @@ class PhotoController extends Controller
     {
         $photo->delete();
 
-        return redirect('/photo/{category}')->with('completed', 'Photo has been deleted');
+        return redirect()->action([PhotoController::class, 'index'],['category' => $category]);
     }
 }

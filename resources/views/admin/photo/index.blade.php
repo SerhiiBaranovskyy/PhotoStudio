@@ -29,6 +29,8 @@
                       @foreach($photos as $photo)
                       <tr>
                         <form method="POST" action="{{ route('photo.update', $category, $photo)}}">
+                          @csrf
+                          @method('PUT')
                           <td style="line-height: 2.5vw;"><b>{{$count}}</b></td>
                             <?php $count++; ?>
                           <td>
@@ -44,19 +46,22 @@
                           </td>
                           <td>
                             <button type="submit" class="btn btn-primary">Змінити</button>
+                            </form>
                             <form action="{{ route('photo.destroy', $category, $photo)}}" method="post" style="display: inline-block">
                               @csrf
                               @method('DELETE')
                               <button class="btn btn-danger" type="submit">Видалити</button>
                             </form>
                           </td>
-                        </form>
+                        
 
                                              
                       </tr>
                     @endforeach
                       <tr>
-                        <form method="POST" action="{{ route('photo.update', $category, $photo)}}">
+                        <form method="POST" action="{{ route('photo.store', $category)}}">
+                          @csrf
+                          @method('PUT')
                           <td style="line-height: 2.5vw;">
                             <i class="fas fa-plus-circle"></i>
                           </td>
