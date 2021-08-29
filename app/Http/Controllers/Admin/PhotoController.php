@@ -28,9 +28,10 @@ class PhotoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Category $category)
     {
-        //
+        return view('admin.photo.edit')
+            ->with(compact('category'));
     }
 
     /**
@@ -45,7 +46,6 @@ class PhotoController extends Controller
             'path_photo' => 'required|max:100',            
         ]);
         $storeData['category_id'] = $category->id;
-        print_r($storeData);
         $photo = Photo::create($storeData);
 
         return redirect()->action([PhotoController::class, 'index'],['category' => $category]);
@@ -69,9 +69,11 @@ class PhotoController extends Controller
      * @param  \App\Models\Photo  $photo
      * @return \Illuminate\Http\Response
      */
-    public function edit(Photo $photo)
+    public function edit(Category $category, Photo $photo)
     {
-        //
+        return view('admin.photo.edit')
+            ->with(compact('category'))
+            ->with(compact('photo'));
     }
 
     /**
@@ -83,6 +85,7 @@ class PhotoController extends Controller
      */
     public function update(Request $request, Category $category, Photo $photo)
     {
+        log::alert($photo->path_photo);
         $photo->update($request);
                 print_r($request);
 
@@ -98,8 +101,9 @@ class PhotoController extends Controller
      */
     public function destroy(Category $category, Photo $photo)
     {
+        log::alert(get_class($photo));
         $photo->delete();
 
-        return redirect()->action([PhotoController::class, 'index'],['category' => $category]);
+        return back();
     }
 }

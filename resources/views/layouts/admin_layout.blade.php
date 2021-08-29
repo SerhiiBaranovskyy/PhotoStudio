@@ -27,6 +27,8 @@
   <link rel="stylesheet" href="/admin/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="/admin/plugins/summernote/summernote-bs4.min.css">
+  <link href="/admin/dist/css/colorbox.css" rel="stylesheet">
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -252,6 +254,10 @@
 <script src="/admin/admin.js"></script>
 <script src="/admin/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <script src="/admin/dist/js/adminlte.min.js"></script>
+<script type="text/javascript" src="/admin/dist/js/jquery.colorbox-min.js"></script>
+<script type="text/javascript" src="/packages/barryvdh/elfinder/js/standalonepopup.js"></script>
+
+
 <script>
 $(function () {
   bsCustomFileInput.init();
