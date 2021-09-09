@@ -54,7 +54,7 @@ Route::put('/category/{category}/update', [CategoryController::class, 'update'])
 Route::delete('/category/{category}/delete', [CategoryController::class, 'destroy'])->name('category.destroy');
 
 Route::get('/photos/{category}', [PhotoController::class, 'index'])->name('photo.index');
-Route::put('/photos/{category}/update', [PhotoController::class, 'update'])->name('photo.update');
+Route::put('/photos/category{category}photo{photo}update', [PhotoController::class, 'update'])->name('photo.update');
 Route::put('/photos/{category}/store', [PhotoController::class, 'store'])->name('photo.store');
 Route::delete('/photos/{photo}/delete', [PhotoController::class, 'destroy'])->name('photo.destroy');
 Route::get('/photos/{category}/create', [PhotoController::class, 'create'])->name('photo.create');

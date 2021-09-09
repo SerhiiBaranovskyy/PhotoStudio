@@ -82,10 +82,12 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
+        log::alert($request->all());
          $updateData = $request->validate([
             'name' => 'required|max:40',
         ]);
         $category->update($updateData);
+
         return redirect('/category')->with('completed', 'Category has been updated');
     }
 

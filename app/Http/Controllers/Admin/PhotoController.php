@@ -85,11 +85,12 @@ class PhotoController extends Controller
      */
     public function update(Request $request, Category $category, Photo $photo)
     {
-        log::alert($photo->path_photo);
-        $photo->update($request);
-                print_r($request);
+        log::alert($request->all());
+        $photo->update($request->all());
+                
+        
 
-        return redirect('/photo/{category}')->with('completed', 'Photo has been updated');
+        return back();
 
     }
 

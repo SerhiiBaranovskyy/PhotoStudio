@@ -34,16 +34,17 @@
                         <label for="exampleInputPassword1">Опис</label>
                         <textarea type="text" class="form-control" id="exampleInputPassword1" rows="5" placeholder="Опис" name="description" >{{ $about->description }}</textarea>
                       </span>
-                    <img src="{{ '/photo/about_photo/'.$about->path_photo }}" class="rounded float-right" id="aboutPhoto" alt="..." style="display:inline-block; width:15%;">
+                    <img src="{{ '/'.$about->path_photo }}" class="rounded float-right" id="aboutPhoto" alt="..." style="display:inline-block; width:15%;">
                   </div>
                   <div class="form-group">
                     <label for="inputFile">Фото</label>
+
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="inputFile" name="path_photo">
-                        <label class="custom-file-label" id="inputFileLabel" for="exampleInputFile">{{ $about->path_photo }}</label>
-                      </div>
-                    </div>
+                        <input type="text" class="form-control" id="inputFile" name="path_photo" value="{{ $about->path_photo }}">
+                          </div>
+                            <a href="" class="popup_selector" data-inputid="inputFile"><i class="fas fa-upload"></i></a>
+                          </div>
                   </div>
                 </div>
                 
