@@ -25,6 +25,16 @@ class CategoryController extends Controller
         return view('admin.categories.index', compact('categories'));
     }
 
+    public function indexPhotos()
+    {
+         $categories = Category::all();
+         foreach($categories as $category){
+            $category->count = $category->photos->count();
+         }
+        return view('admin.categories.indexPhotos', compact('categories'));
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *

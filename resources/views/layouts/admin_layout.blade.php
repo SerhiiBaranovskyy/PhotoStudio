@@ -28,6 +28,11 @@
   <!-- summernote -->
   <link rel="stylesheet" href="/admin/plugins/summernote/summernote-bs4.min.css">
   <link href="/admin/dist/css/colorbox.css" rel="stylesheet">
+  <!-- Dropzone -->
+  <link rel="stylesheet" href="/admin/plugins/dropzone-5.7.0/dist/dropzone.css">
+  
+
+
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -98,8 +103,20 @@
               </p>
             </a>
           </li>
+
           <li class="nav-item">
             <a href="{{route('category.index')}}" class="nav-link">
+              <i class="nav-icon far fa-list-alt"></i>
+              <p>
+                Категорії
+              </p>
+            </a>
+          </li>
+
+
+
+          <li class="nav-item">
+            <a href="{{route('category.indexPhotos')}}" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
                 Фотографії
@@ -251,11 +268,13 @@
 <script src="/admin/dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="/admin/dist/js/pages/dashboard.js"></script>
-<script src="/admin/admin.js"></script>
+<script src="/admin/admin.js?v=12392823"></script>
 <script src="/admin/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <script src="/admin/dist/js/adminlte.min.js"></script>
 <script type="text/javascript" src="/admin/dist/js/jquery.colorbox-min.js"></script>
 <script type="text/javascript" src="/packages/barryvdh/elfinder/js/standalonepopup.js"></script>
+  <!-- Dropzone -->
+<script type="text/javascript" src="/admin/plugins/dropzone-5.7.0/dist/dropzone.js"></script>
 
 
 <script>

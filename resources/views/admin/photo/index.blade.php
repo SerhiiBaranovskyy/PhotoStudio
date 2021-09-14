@@ -8,11 +8,30 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Категорія - {{$category->name}}      </h1>            
+            <h1 class="m-0">Фотографії - {{$category->name}}      </h1>            
           </div><!-- /.col --> 
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
+
+    <div class="content container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+          <form method="POST" action="{{url('photo/gallery')}}" enctype="multipart/form-data" class="dropzone" id="dropzone">
+            {{csrf_field()}}
+            <div class="dz-default dz-message"><h4>Перетягніть файли або клікніть для завантаження</h4></div>
+          </form>
+        </div>
+      </div>
+   
+
+
+
+
+
+
+
+
     <!-- /.content-header -->
     <div class="card-body table-responsive p-0">
                 <table class="table table-head-fixed text-nowrap">

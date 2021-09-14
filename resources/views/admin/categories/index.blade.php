@@ -40,7 +40,6 @@
                       <td>{{$category->count}}</td>
                       <td>
                         <a href="{{ route('category.edit', $category)}}" class="btn btn-primary btn-sm">Редагувати</a>
-                        <a href="{{ route('photo.index', $category)}}" class="btn btn-primary btn-sm">Фотографії</a>
                         <form action="{{ route('category.destroy', $category)}}" method="post" style="display: inline-block">
                           @csrf
                           @method('DELETE')

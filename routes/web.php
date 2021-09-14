@@ -47,6 +47,8 @@ Route::get('/users', [UserController::class, 'index'])->name('users.index');
 Route::delete('/users/{user}',[UserController::class, 'destroy'])->name('user.destroy');
 
 Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
+Route::get('/categoryPhotos', [CategoryController::class, 'indexPhotos'])->name('category.indexPhotos');
+
 Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
 Route::put('/category/store', [CategoryController::class, 'store'])->name('category.store');
 Route::get('/category/{category}/edit', [CategoryController::class, 'edit'])->name('category.edit');
